@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+
+<script language="javascript">
+
+function escribir(){
+	
+document.getElementById("texto2").setAttribute("style", "color: red");
+	
+	document.getElementById("texto3").setAttribute("style", "color: yellow");
+
+	
+ document.getElementById("texto2").value = document.getElementById("texto1").value.toUpperCase();
+	
+	
+	document.getElementById("texto3").value = document.getElementById("texto1").value.toLowerCase()
+	
+}
+
+</script>
+
+
+
+<meta charset="utf-8">
+<title>Documento sin título</title>
+</head>
+
+<body>
+
+
+<input type="text" value="" id="texto1" onkeyup="escribir()"> 
+
+<input type="text" value="" id="texto2">
+
+<input type="text" value="" id="texto3">
+
+
+</body>
+</html>

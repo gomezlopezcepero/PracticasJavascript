@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+<head>
+<style type="text/css">
+#primero, #segundo, #resultado {width: 150px; height: 150px; border: thin solid silver; background: #F5F5F5; float:
+left; margin:20px; font-size: 6em; color: #333; text-align: center; padding: 5px; font-family:Arial, Helvetica, sansserif;}
+
+#primero p, #segundo p, #resultado p {margin:.2em 0;}
+#resultado {margin-left:1.3em; border-color: black;} .clear {clear:both;}
+#compara {margin-left:11em;}
+#genera {font-size:1.2em; margin-left:8em;}
+</style>
+
+<script language="javascript">
+
+var cont =0;
+var cont2=0;
+
+var parr1=document.createElement("p");
+var parr2=document.createElement("p");
+var result=document.createElement("p");
+
+var aleatorio=0;
+var aleatorio2=0;
+
+
+function genera(){
+		
+	if(cont>0){
+	
+		document.getElementById("primero").removeChild(parr1);
+		document.getElementById("segundo").removeChild(parr2);
+		
+	}
+	aleatorio = Math.round(Math.random()*100);
+	aleatorio2 = Math.round(Math.random()*100);
+	
+	parr1=document.createElement("p");
+	var textp1=document.createTextNode(aleatorio);
+	parr1.appendChild(textp1);
+	document.getElementById("primero").appendChild(parr1);
+	
+	
+	parr2=document.createElement("p");
+	var textp2=document.createTextNode(aleatorio2);
+	parr2.appendChild(textp2);
+	document.getElementById("segundo").appendChild(parr2);
+	
+	cont++;
+}
+
+
+function suma(){
+
+	if(cont2>0){
+		document.getElementById("resultado").removeChild(result);		
+	}
+	
+	
+		
+		result=document.createElement("p");
+		var tado= aleatorio + aleatorio2;
+		var textp1=document.createTextNode(tado);
+		result.appendChild(textp1);
+		document.getElementById("resultado").appendChild(result);
+
+
+		
+	
+	cont2++;
+}
+
+
+
+function resta(){
+
+	if(cont2>0){
+		document.getElementById("resultado").removeChild(result);		
+	}
+	
+	
+		
+		result=document.createElement("p");
+		var tado= aleatorio - aleatorio2;
+		var textp1=document.createTextNode(tado);
+		result.appendChild(textp1);
+		document.getElementById("resultado").appendChild(result);
+
+
+		
+	
+	cont2++;
+}
+
+
+</script>
+
+</head>
+
+<body>
+<input id="genera" type="button" value="¡¡ Genera !!" onclick="genera()" /><br />
+<div id="primero"></div>
+<div id="segundo"></div>
+<div class="clear"></div>
+<br />
+<input id="compara" type="button" value="<< SUMA >>" onclick="suma()" />
+
+<input id="compara2" type="button" value="<< RESTA >>" onclick="resta()" />
+<div id="resultado"></div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+
+<script language="javascript">
+
+function actualizar_nodo(){
+
+var nuevoP = document.createElement("p");
+var texto = document.createTextNode("Este párrafo se ha creado dinámicamente y sustituye al párrafo original");
+nuevoP.appendChild(texto);
+
+var anteriorP = document.body.getElementsByTagName("p")[0];
+anteriorP.parentNode.replaceChild(nuevoP, anteriorP);
+
+}
+
+</script>
+
+
+<meta charset="utf-8">
+<title>Documento sin título</title>
+</head>
+
+<body onLoad="actualizar_nodo();">
+
+<p>Este párrafo va a ser sustituido donámicamente"</p>
+
+</body>
+</html>

@@ -1,0 +1,224 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sin título</title>
+
+<style>
+
+table{
+	
+	border: 1px solid black;
+}
+
+td{
+	
+	border: 1px solid black;
+}
+
+</style>
+
+
+
+<script language="javascript">
+
+//var exMail = /\w+@\w+\.+[a-z]/;
+var exMail = /[a-zA-Z0-9]{1,25}[@]{1}[a-zA-Z]{1,10}[.]{1}[a-zA-Z]{1,5}/;
+var exDni = /[0-9]{8}[-]{1}[A-Z]{1}/;
+var exTlf = /[69]{1}[0-9]{8}/;
+
+
+var identificadorUnico=0;
+
+function crearTabla(){
+	
+	var nombre=document.getElementById("nombre").value;
+	var apellidos=document.getElementById("apellidos").value;
+	var dni=document.getElementById("dni").value;
+	var correo=document.getElementById("correo").value;
+	var telefono=document.getElementById("telefono").value;
+	var curso=document.getElementById("selec").value;
+	
+	
+if(nombre==""||apellidos==""||dni==""||correo==""||telefono==""||curso==""){
+	
+	document.getElementById("mensaje").innerHTML="Tienes que rellenar todos los campos";
+	
+	return false;
+}	
+else if(!exMail.test(correo)){
+	document.getElementById("mensaje").innerHTML="El correo no es correcto";
+}
+else if(!exDni.test(dni)){
+	document.getElementById("mensaje").innerHTML="El DNI no es correcto";
+}
+else if(nombre.length>20){
+	document.getElementById("mensaje").innerHTML="El nombre no es correcto";
+}
+else if(!exTlf.test(telefono)){
+	document.getElementById("mensaje").innerHTML="El telefono no es correcto";
+}
+else{
+
+document.getElementById("mensaje").innerHTML="";
+	var fila = document.createElement("tr");
+	
+	fila.setAttribute("id", identificadorUnico);
+	
+	var celda1 = document.createElement("td");
+		celda1.appendChild(document.createTextNode(identificadorUnico)); //convertirlo a texto
+		fila.appendChild(celda1);
+		
+		
+		var celda2 = document.createElement("td");
+		celda2.appendChild(document.createTextNode(nombre)); //convertirlo a texto
+		fila.appendChild(celda2);
+		
+		
+		
+		var celda3 = document.createElement("td");
+		celda3.appendChild(document.createTextNode(apellidos)); //convertirlo a texto
+		fila.appendChild(celda3);
+		
+		
+		
+		
+		var celda4 = document.createElement("td");
+		celda4.appendChild(document.createTextNode(dni)); //convertirlo a texto
+		fila.appendChild(celda4);
+		
+		
+		
+		
+		var celda5 = document.createElement("td");
+		celda5.appendChild(document.createTextNode(correo)); //convertirlo a texto
+		fila.appendChild(celda5);
+		
+		
+		var celda6 = document.createElement("td");
+		celda6.appendChild(document.createTextNode(telefono)); //convertirlo a texto
+		fila.appendChild(celda6);
+		
+		
+		var celda7 = document.createElement("td");
+		celda7.appendChild(document.createTextNode(curso)); //convertirlo a texto
+		fila.appendChild(celda7);
+		
+		
+		var botonBorrar = document.createElement("input");
+		botonBorrar.setAttribute("type","button");
+		botonBorrar.setAttribute("value", "Borrar solicitud");
+		//meter una funcion en el boton y meterle el identificador unico
+		botonBorrar.setAttribute("onClick", "borrarDato(" + identificadorUnico + ")");
+		
+		var celda8 = document.createElement("td");
+		celda8.appendChild(botonBorrar);
+		fila.appendChild(celda8);
+		
+		
+		var tabla = document.getElementById("tabla2").appendChild(fila);
+	
+	identificadorUnico++;
+}
+	
+}
+
+function borrarDato(identificadorUnico){
+	
+	var borrarFila = document.getElementById(identificadorUnico);
+		var tabla2 = document.getElementById("tabla2");
+		
+		tabla2.removeChild(borrarFila);
+	
+}
+
+</script>
+
+
+</head>
+
+<body>
+
+<h1>Registro alumno</h1>
+
+<hr>
+
+<h2>Datos de la solicitudad</h2>
+
+<table>
+
+	<tr>
+		<th>Datos del alumno</th>
+	</tr>
+
+	<tr>
+
+		<td>Nombre</td>
+
+		<td>Apellidos</td>
+
+		<td>DNI</td>
+
+		<td>correo</td>
+
+		<td>telefono</td>
+
+		<td>curso matriculado</td>
+
+	</tr>
+    <tr>
+	    <td>
+    	<input type="text" id="nombre">
+    	</td>
+    	<td>
+   	 	<input type="text" id="apellidos">
+   		 </td>
+ 	   <td>
+    	<input type="text" id="dni">
+    	</td>
+    	<td>
+    	<input type="email" id="correo">
+    	</td>
+    	<td>
+    	<input type="tel" id="telefono">
+    	</td>
+        <td>
+        	<select id="selec">
+			  <option value="DAW">DAW</option>
+			  <option value="Cocina">Cocina</option>
+			  <option value="Penes">Penes</option>
+			  <option value="Negros">Negros</option>
+			</select>
+  		</td>
+  
+  			<td>
+			  <input type="button" value="Enviar" onClick="crearTabla();">
+  			</td>
+    	</tr>
+
+</table>
+
+<br>
+
+<br>
+
+<h2>Solicitudes</h2>
+
+<table id="tabla2">
+
+<tr>
+<th>Identificador</th>
+<th>Nombre</th>
+<th>Apellidos</th>
+<th>dni</th>
+<th>correo</th>
+<th>telefono</th>
+<th>Curso</th>
+</tr>
+
+</table>
+
+<p id="mensaje"></p>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<head><title>EJERCICIO 4</title></head>
+<script language="javascript">
+    var contador =0;
+    function SelecionarColor(){
+		cambiar();
+		contador++;	
+	}
+        var intervalo =  setInterval('SelecionarColor()',700);
+    
+   
+	
+	function cambiar(){
+		if(contador==1){
+			//alert("AMARILLO")
+			document.bgColor="yellow";
+		}
+		else if(contador==2){
+			//alert("NARANJA")
+			document.bgColor="orange";
+		}
+		else if(contador==3){
+			//alert("ROSA")
+			document.bgColor="pink";
+		}
+		else if(contador==4){
+			//alert("ROJO")
+			document.bgColor="red";
+		}
+		else if(contador==5){
+			//alert("AZUL")
+			document.bgColor="blue";
+		}
+        else if(contador==6){         
+            alert("ha finalizado el proceso");
+            window.clearTimeout(intervalo);
+		}
+        //console.log(contador);
+	}
+
+
+</script>	
+
+
+<body onload="SelecionarColor()">
+    
+</body>
+</html>

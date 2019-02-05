@@ -1,0 +1,278 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sin título</title>
+
+<style>
+
+ #div1{
+	 position:absolute;
+	 left: 400px;
+	 top:20px;
+	 display: none;
+	 background-color: pink;
+ }
+ 
+ 
+  #div2{
+	 position:absolute;
+	 left: 400px;
+	 top:120px;
+	 display: none;
+	  background-color: pink;
+ }
+ 
+ 
+  #div3{
+	 position:absolute;
+	 left: 400px;
+	 top:200px;
+	 display: none;
+	  background-color: pink;
+ }
+ 
+ 
+  #div4{
+	 position:absolute;
+	 left: 400px;
+	 top:300px;
+	 display: none;
+	  background-color: pink;
+ }
+ 
+  #div5{
+	 position:absolute;
+	 left: 400px;
+	 top:400px;
+	 display: none;
+	  background-color: pink;
+ }
+
+</style>
+
+<script language="javascript">
+
+
+var exTlf = /[0-9]{9}/;
+var exMail = /[a-zA-Z0-9]{1,25}[@]{1}[a-zA-Z]{1,10}[.]{1}[a-zA-Z]{1,3}/;
+
+
+function validarformulario(){
+
+
+var nombre=document.getElementById("nombre").value;
+	var empresa=document.getElementById("empresa").value;
+	var correo=document.getElementById("correo").value;
+	var telefono=document.getElementById("telefono").value;
+	var textarea=document.getElementById("textarea").value;
+
+
+if(nombre==""||empresa==""||correo==""||telefono==""||textarea==""){
+	
+	alert("Tienes que rellenar todos los campos");
+	
+	return false;
+}
+
+else if(nombre.length>50||nombre.length<4){
+	alert("El nombre tiene que ser de la longitud correcta");
+}
+else if(empresa.length>50||empresa.length<4){
+	
+	alert("La empresa tiene que ser de la longitud correcta");
+}
+else if(!exTlf.test(telefono)){
+	alert("El telefono no es válido");
+}
+
+else if(!exMail.test(correo)){
+	alert("El correo no es válido");
+}
+
+
+}
+
+
+
+limite=500;
+contenido_textarea= "";
+
+function escribir(){
+
+var longitud = document.getElementById("textarea").value.length;
+
+		
+		
+	if(longitud > 500){
+		document.getElementById("textarea").value = contenido_textarea;
+	alert("solo puedes escribir 500 carácteres");	
+	}
+	else{
+		contenido_textarea = document.getElementById("textarea").value;
+		longitud = limite - longitud;
+		
+		document.getElementById("cien").innerHTML=longitud;
+		
+	}
+		
+}
+
+
+
+
+
+
+
+
+var mensaje1=0;
+
+function muestraMensaje1(){
+	
+		document.getElementById("div1").setAttribute("style", "display: block");
+
+}
+
+function ocultaMensaje1(){
+	
+		document.getElementById("div1").setAttribute("style", "display: none");
+
+}
+
+
+	function muestraMensaje2(){
+	
+		document.getElementById("div2").setAttribute("style", "display: block");
+
+}
+
+function ocultaMensaje2(){
+	
+		document.getElementById("div2").setAttribute("style", "display: none");
+
+}
+
+
+function muestraMensaje3(){
+	
+		document.getElementById("div3").setAttribute("style", "display: block");
+
+}
+
+function ocultaMensaje3(){
+	
+		document.getElementById("div3").setAttribute("style", "display: none");
+
+}
+
+
+
+function muestraMensaje4(){
+	
+		document.getElementById("div4").setAttribute("style", "display: block");
+
+}
+
+function ocultaMensaje4(){
+	
+		document.getElementById("div4").setAttribute("style", "display: none");
+
+}
+
+
+
+function muestraMensaje5(){
+	
+		document.getElementById("div5").setAttribute("style", "display: block");
+
+}
+
+function ocultaMensaje5(){
+	
+		document.getElementById("div5").setAttribute("style", "display: none");
+
+}
+
+
+
+window.onload = function() {
+	document.getElementById("ayu1").onmouseover = muestraMensaje1;
+	document.getElementById("ayu1").onmouseout = ocultaMensaje1;
+	
+	document.getElementById("ayu2").onmouseover = muestraMensaje2;
+	document.getElementById("ayu2").onmouseout = ocultaMensaje2;
+	
+	document.getElementById("ayu3").onmouseover = muestraMensaje3;
+	document.getElementById("ayu3").onmouseout = ocultaMensaje3;
+	
+	document.getElementById("ayu4").onmouseover = muestraMensaje4;
+	document.getElementById("ayu4").onmouseout = ocultaMensaje4;
+	
+	document.getElementById("ayu5").onmouseover = muestraMensaje5;
+	document.getElementById("ayu5").onmouseout = ocultaMensaje5;
+	
+	document.getElementById("textarea").onkeyup = escribir;
+	
+}
+
+
+
+
+
+</script>
+
+</head>
+
+<body>
+
+<p>Nombre:</p>
+<input type="text" id="nombre" autocomplete="on">
+<img src="imagenes/ayuda.gif" id="ayu1"/>
+<p>Empresa:</p>
+<input type="text" id="empresa" autocomplete="on">
+<img src="imagenes/ayuda.gif" id="ayu2"/>
+<p>Telefono:</p>
+<input type="text" id="telefono" autocomplete="on">
+<img src="imagenes/ayuda.gif" id="ayu3" />
+<p>Email:</p>
+<input type="text" id="correo" autocomplete="on">
+<img src="imagenes/ayuda.gif" id="ayu4" />
+
+<br>
+
+<p>Comentario</p>
+
+<p> puedes escribir hasta <span id="cien">500</span> carácteres adicionales</p>
+
+<textarea  id="textarea"></textarea>
+<img src="imagenes/ayuda.gif" id="ayu5"/>
+
+<br>
+
+<div id="div1">
+<p>Nombre debe tener una longitud entre 4 y 50</p>
+</div>
+
+<div id="div2">
+<p>Empresa debe tener una longitud entre 4 y 50</p>
+</div>
+
+
+<div id="div3">
+<p>Telefono debe ser numerico y una longitud de 9</p>
+</div>
+
+<div id="div4">
+<p>El correo electronico debe tener @ .</p>
+</div>
+
+<div id="div5">
+<p>El comentario debe tener un maximo de 500 letras</p>
+</div>
+
+
+<input type="button" id="boton" value="enviar" onClick="validarformulario();">
+
+
+</body>
+</html>

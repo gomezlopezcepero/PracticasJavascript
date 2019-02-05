@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+<head>
+
+<script language="javascript">
+
+var mensaje1=0;
+
+function muestraMensaje1(){
+	
+
+if(mensaje1%2!=0){
+		
+		document.getElementById("parra1").setAttribute("style", "display: block");
+		document.getElementById("text1").innerHTML= "Ocultar contenido";
+	}
+	else{
+		document.getElementById("parra1").setAttribute("style", "display: none");
+		document.getElementById("text1").innerHTML= "Mostrar contenido";
+	}
+mensaje1++;	
+}
+
+
+var mensaje2=0;
+
+function muestraMensaje2(){
+	
+
+	
+
+if(mensaje2%2!=0){
+		
+		document.getElementById("parra2").setAttribute("style", "display: block");
+		document.getElementById("text2").innerHTML= "Ocultar contenido";
+	}
+	else{
+		document.getElementById("parra2").setAttribute("style", "display: none");
+		document.getElementById("text2").innerHTML= "Mostrar contenido";
+	}
+	mensaje2++;	
+}
+
+
+
+
+var mensaje3=0;
+
+function muestraMensaje3(){
+	
+
+if(mensaje3%2!=0){
+		
+		document.getElementById("parra3").setAttribute("style", "display: block");
+		document.getElementById("text3").innerHTML= "Ocultar contenido";
+	}
+	else{
+		document.getElementById("parra3").setAttribute("style", "display: none");
+		document.getElementById("text3").innerHTML= "Mostrar contenido";
+	}
+mensaje3++;	
+}
+	
+
+
+
+window.onload = function() {
+	document.getElementById("text1").onclick = muestraMensaje1;
+	document.getElementById("text2").onclick = muestraMensaje2;
+	document.getElementById("text3").onclick = muestraMensaje3;
+}
+
+
+
+
+
+</script>
+
+<meta charset="utf-8">
+<title>Documento sin título</title>
+</head>
+
+<body>
+
+<p id="parra1">
+
+Lo que yo opino puede, pese a toda la argumentación y desarrollo llevados a cabo, distar bastante de la realidad. Esto se debe a que cualquier tema enfocado desde diferentes puntos de vista puede dar lugar a opiniones dispares.
+
+</p>
+
+<br>
+
+<a href="#" id="text1">Ocultar contenido</a>
+
+<br>
+
+<!--<a href="#" id="text1">Mostrar contenido</a>-->
+
+<p id="parra2">
+
+Con todo esto puede verse que la condición humana puede, y de hecho debe, ser algo que genere controversia, ya que de ésta han nacido todas las corrientes del razonamiento humano.
+
+</p>
+
+<br>
+
+<a href="#" id="text2">Ocultar contenido</a>
+
+<br>
+
+<p id="parra3">
+
+Por lo tanto no existe una manera concreta y apropiada para responder a tu pregunta, ya que de manera subyacente a la propia duda, existe la incertidumbre de la respuesta.
+
+</p>
+
+<br>
+
+<a href="#" id="text3" >Ocultar contenido</a>
+
+<br>
+
+</body>
+</html>

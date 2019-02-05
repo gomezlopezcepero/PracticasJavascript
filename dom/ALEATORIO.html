@@ -1,0 +1,117 @@
+<!doctype html>
+
+<html>
+<head>
+<style type="text/css">
+#primero, #segundo, #resultado {width: 150px; height: 150px; border: thin solid silver; background: #F5F5F5; float:
+left; margin:20px; font-size: 6em; color: #333; text-align: center; padding: 5px; font-family:Arial, Helvetica, sansserif;}
+
+#primero p, #segundo p, #resultado p {margin:.2em 0;}
+#resultado {margin-left:1.3em; border-color: black;} .clear {clear:both;}
+#compara {margin-left:11em;}
+#genera {font-size:1.2em; margin-left:8em;}
+</style>
+
+<script language="javascript">
+
+var cont=0;
+cont2=0;
+
+
+function generarNumeros(){
+
+cont++;
+
+var aleatorio = Math.round(Math.random()*100);
+
+var aleatorio2 = Math.round(Math.random()*100);
+
+if(cont==1){
+var primen =document.getElementById("primero");
+var parrafo= document.createElement("p");
+var tAle = document.createTextNode(aleatorio);
+parrafo.appendChild(tAle);
+parrafo.setAttribute("id", "uno");
+primen.appendChild(parrafo);
+
+
+var segun = document.getElementById("segundo");
+var parrafo2= document.createElement("p");
+var tAle2 = document.createTextNode(aleatorio2);
+parrafo2.appendChild(tAle2);
+parrafo2.setAttribute("id", "dos");
+segun.appendChild(parrafo2);
+}
+else{
+	
+var primen = document.getElementById("primero");
+var parrafo = document.createElement("p");
+var tAle = document.createTextNode(aleatorio);
+var anteriorP = document.body.getElementsByTagName("p")[0];
+parrafo.appendChild(tAle);
+parrafo.setAttribute("id", "uno");
+anteriorP.parentNode.replaceChild(parrafo, anteriorP);
+
+
+
+var segun = document.getElementById("segundo");
+var parrafo2 = document.createElement("p");
+var tAle2 = document.createTextNode(aleatorio2);
+var anteriorP2 = document.body.getElementsByTagName("p")[1];
+parrafo2.appendChild(tAle2);
+parrafo2.setAttribute("id", "dos");
+anteriorP2.parentNode.replaceChild(parrafo2, anteriorP2);
+	
+	}
+}
+
+
+
+function compararNumeros(){
+	
+	cont2++;
+	
+alert("funca");
+var primen = document.getElementById("uno").innerHTML;
+var segun = document.getElementById("dos").innerHTML;
+alert(primen);
+alert(segun);
+var resultado = document.getElementById("resultado");
+
+
+
+if(primen > segun){
+	
+alert("el 1 es mayor");
+	
+	var parrafo =document.createElement("p");
+	var prima = document.createTextNode(primen);
+	parrafo.appendChild(prima);
+	resultado.appendChild(parrafo);
+	}
+else{
+	alert("el 2 es mayor");
+	var parrafo2 =document.createElement("p");
+	var prima2 = document.createTextNode(segun);
+	parrafo2.appendChild(prima2);
+	resultado.appendChild(parrafo2);
+	}
+	
+}
+
+</script>
+
+</head>
+
+
+<body>
+<input id="genera" onClick="generarNumeros();" type="button" value="¡¡ Genera !!" onclick="genera()" /><br />
+<div id="primero"></div>
+<div id="segundo"></div>
+<div class="clear"></div>
+<br />
+<input id="compara" onClick="compararNumeros();" type="button" value="<< Comparar >>" onclick="compara()" />
+<br/>
+<div id="resultado"></div>
+</body>
+</html>

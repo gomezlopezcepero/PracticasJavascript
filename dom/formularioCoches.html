@@ -1,0 +1,284 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sin título</title>
+
+
+<style>
+
+
+*{
+	
+	font-family: arial;
+	font-weight:bold;
+}
+
+
+#tabla2{
+	
+	background-color:rgba(219,219,219,1.00);
+}
+
+
+h1{
+	color:red;
+	font-family: arial;
+	
+}
+
+</style>
+
+<script language="javascript">
+
+
+var cadena="esto es un ejemplo";
+
+var er1= new RegExp ("alumno");
+
+
+var identificadorUnico=0;
+
+
+
+function agregar(){
+	
+	exMail = /\w+@\w+\.+[a-z]/;
+	exTLF = /^([9]{1})+(\[1-9]{8})*/;
+	exNom = /^([A-Z]{1})+(\[a-z]{3,5})*/;
+	
+	
+var marca = document.getElementById("marca").value;
+var modelo = document.getElementById("modelo").value;
+var ano = document.getElementById("año").value;
+var kms = document.getElementById("kms").value;
+var fecha = document.getElementById("fecha").value;
+	
+var nombre = document.getElementById("nombre").value;
+var apellidos = document.getElementById("apellidos").value;
+var correo = document.getElementById("correo").value;
+var telefono = document.getElementById("telefono").value;
+
+if(marca==""||modelo==""||ano==""||kms==""||fecha==""||nombre==""||apellidos==""||correo==""||telefono==""){
+	alert("Tienes que rellenar todos los campos");
+	
+	return false;
+}
+else if(!exMail.test(correo)){
+	alert("El correo no es válido");
+}
+else if(!exTLF.test(telefono)){
+	alert("El telefono no es válido");
+}
+else if(!exNom.test(nombre)){
+	alert("El nombre no es valido");
+}
+else{
+	var fila = document.createElement("tr");		
+	fila.setAttribute("id", identificadorUnico);//poner un id
+
+		var celda1 = document.createElement("td");
+		celda1.appendChild(document.createTextNode(identificadorUnico)); //convertirlo a texto
+		fila.appendChild(celda1);
+		
+		
+		var celda2 = document.createElement("td");
+		celda2.appendChild(document.createTextNode(nombre)); //convertirlo a texto
+		fila.appendChild(celda2);
+		
+		
+		
+		var celda3 = document.createElement("td");
+		celda3.appendChild(document.createTextNode(apellidos)); //convertirlo a texto
+		fila.appendChild(celda3);
+		
+		
+		var celda4 = document.createElement("td");
+		celda4.appendChild(document.createTextNode(correo)); //convertirlo a texto
+		fila.appendChild(celda4);
+		
+		
+		var celda5 = document.createElement("td");
+		celda5.appendChild(document.createTextNode(telefono)); //convertirlo a texto
+		fila.appendChild(celda5);
+		
+		
+		var celda6 = document.createElement("td");
+		celda6.appendChild(document.createTextNode(marca)); //convertirlo a texto
+		fila.appendChild(celda6);
+		
+		
+		var celda7 = document.createElement("td");
+		celda7.appendChild(document.createTextNode(modelo)); //convertirlo a texto
+		fila.appendChild(celda7);
+		
+		
+		var celda8 = document.createElement("td");
+		celda8.appendChild(document.createTextNode(ano)); //convertirlo a texto
+		fila.appendChild(celda8);
+		
+		
+		var celda9 = document.createElement("td");
+		celda9.appendChild(document.createTextNode(kms)); //convertirlo a texto
+		fila.appendChild(celda9);
+		
+		
+		var celda10 = document.createElement("td");
+		celda10.appendChild(document.createTextNode(fecha)); //convertirlo a texto
+		fila.appendChild(celda10);
+		
+		
+		var botonBorrar = document.createElement("input");
+		botonBorrar.setAttribute("type","button");
+		botonBorrar.setAttribute("value", "Borrar solicitud");
+		//meter una funcion en el boton y meterle el identificador unico
+		botonBorrar.setAttribute("onClick", "borrarDato(" + identificadorUnico + ")");
+		
+		var celda11 = document.createElement("td");
+		celda11.appendChild(botonBorrar);
+		fila.appendChild(celda11);
+
+		
+		identificadorUnico++;
+		
+		
+		var nombre = document.getElementById("tabla3").appendChild(fila);
+}
+}
+
+
+
+	function borrarDato(identificadorUnico){
+		var borrarFila = document.getElementById(identificadorUnico);
+		var tabla = document.getElementById("tabla3");
+		
+		tabla.removeChild(borrarFila);
+		
+	}
+
+
+</script>
+
+
+</head>
+
+<body>
+
+
+<h1>Importamos vehículos de segunda mano</h1>
+
+<hr>
+
+<h2>Datos de la solicitud</h2>
+
+<table id="tabla2">
+	<tr style="background-color:rgba(219,219,219,1.00);">
+		<th>
+		Datos del vehículo solicitado
+		</th>
+
+	</tr>
+    <tr style="background-color: white;" >
+    	<td>
+        Marca
+        </td>
+        <td>
+        Modelo
+        </td>
+        <td>
+        Año fabricación
+        </td>
+        <td>
+        Km
+        </td>
+        <td>
+        Fecha de entrega
+        </td>	
+    </tr>
+    <tr style="background-color: white;" >
+    	<td>
+              <input type="text" id="marca" autocomplete="on" required>
+
+        </td>
+        <td>
+        	 <input type="text" id="modelo" autocomplete="on" required>
+        </td>
+        <td>
+             <input type="text"  id="año" autocomplete="on" required>
+        </td>
+        <td>
+             <input type="text" id="kms" autocomplete="on" required>
+        </td>
+        <td>
+             <input type="text" id="fecha" autocomplete="on" required>
+        </td>	
+    </tr>
+  <tr>
+  		<th style="background-color:rgba(219,219,219,1.00);">Datos del cliente
+        </th>
+  </tr>
+  <tr style="background-color: white;" >
+    	<td>
+        Nombre
+        </td>
+        <td>
+        Apellido
+        </td>
+        <td>
+        Correo electrónico
+        </td>
+        <td>
+        Teléfono
+        </td>
+
+    </tr>
+    <tr style="background-color: white;" >
+    	<td>
+            <input type="text" id="nombre" autocomplete="on" required>
+        </td>
+        <td>
+            <input type="text" id="apellidos" autocomplete="on" required>
+        </td>
+        <td>
+            <input type="text" id="correo" autocomplete="on" required>
+        </td>
+        <td>
+            <input type="text" id="telefono" autocomplete="on" required>
+        </td>
+        <td>
+            <button type="button" onClick="agregar();">Enviar</button>
+        </td>
+      	
+    </tr>
+  
+</table>
+
+
+<h2>Solicitudes registradas</h2>
+
+
+
+
+
+
+<table id="tabla3" cellspacing="5" cellpadding="5">
+
+		<tr style="background-color:red; color:white;">
+        		<td> ID </td>
+                <td> Nombre </td>
+                <td> Apellidos </td>
+                <td> Email </td>
+                <td> Teléfono </td>
+                <td> Marca </td>
+                <td> Modelo </td>
+                <td> Año de fabricacion</td>
+                <td> Kms </td>
+                <td> Fecha de entrega </td>
+                <td> eliminar </td>
+		</tr>	
+
+</table>
+
+
+</body>
+</html>

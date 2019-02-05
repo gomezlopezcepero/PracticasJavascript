@@ -1,0 +1,40 @@
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<head> <title>Solicitud</title>
+<style>
+ 
+</style>
+<script language="javascript">
+    
+    function redireccionar(){
+         var opciones="left=925,top=-15,width=400,height=400";
+         var enlace=document.getElementById("enlace").value;
+         miVentana=window.open("http://"+enlace,"secundaria",opciones);
+         
+        
+    }
+  
+    
+function agregar(){
+    
+       var opciones="left=925,top=-15,width=400,height=400";
+        miVentana=window.open("","secundaria",opciones);
+        
+       
+              
+       // miVentana.document.write("<input type=button id=btn_eliminar value=Eliminar onClick=window.close()>");
+        
+        
+    
+}
+
+	
+</script>
+<title>EJERCICIO ·</title></head>
+
+<body onload="agregar()">
+    <input type="button" id="btn_agregar" value="ir a web" onClick="redireccionar()">
+    <input type="text" id="enlace">
+    
+</body>
+</html>

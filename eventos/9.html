@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<script language="javascript">
+
+
+function tapar(){
+	
+	var text = document.getElementById("texto");
+
+text.setAttribute("style","color:white");
+	
+}
+
+
+function destapar(){
+	
+	var text = document.getElementById("texto");
+
+text.setAttribute("style","color:black");
+	
+}
+
+</script>
+<meta charset="utf-8">
+<title>Documento sin título</title>
+</head>
+
+<body>
+
+<input type="text" value=""  id="texto"> 
+
+<input type="button" onClick="tapar()" value="ocultar"  id="boton1">
+
+<input type="button" onClick="destapar()" value="desocultar"  id="boton2">  
+
+
+</body>
+</html>

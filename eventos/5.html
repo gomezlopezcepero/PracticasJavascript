@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<script language="javascript">
+
+ function over(){
+	 
+	 document.getElementById("texto").setAttribute("style", "color: red; font-size: 25px;");
+	 
+	// document.getElementById("texto").value = document.getElementById("texto").value.toUpperCase();
+	 
+	
+	 
+ }
+
+function out(){
+	
+	document.getElementById("texto").setAttribute("style", "color: black");
+	 
+	 document.getElementById("texto").value = document.getElementById("texto").value.toLowerCase();
+
+}
+
+</script>
+<meta charset="utf-8">
+<title>Documento sin título</title>
+</head>
+
+<body>
+
+
+<p onMouseOver="over();" onMouseOut="out();" id="texto">Esto es un texto ramdon</p>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sin título</title>
+
+<script language="javascript"> 
+
+ var opciones = "width=500, height=300";
+
+function imagen1(){
+
+var ventana= window.open("", "", opciones);
+ventana.document.write('<scr' + 'ipt type="text/javascript">function abrir(){ var texto=document.getElementById("texto").value; window.open(texto);}</scr' + 'ipt><input type="text" value="http://" id="texto"/><input type="button" value="enviar" onClick="abrir()"/>');
+
+
+
+}
+
+
+</script>
+</head>
+
+<body onLoad="imagen1();">
+
+<h2>Página con minuaturas de imagenes</h2>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+
+<script language="javascript">
+
+function anadir_nodo(){
+	
+	var p = document.createElement("p");
+	
+	var texto = document.createTextNode("Este párrafo no existía en la página HTML original");
+	
+	p.appendChild(texto);
+	
+	document.body.appendChild(p);
+}
+
+
+</script>
+
+<meta charset="utf-8">
+<title>Documento sin título</title>
+</head>
+
+<body onLoad="anadir_nodo();">
+
+
+
+
+</body>
+</html>

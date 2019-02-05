@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sin título</title>
+
+<script language="javascript"> 
+
+ var opciones = "width=500, height=300";
+
+function imagen1(){
+
+var ventana= window.open("", "", opciones);
+
+
+var boton = document.createElement("input");
+boton.setAttribute("type", "button");
+boton.setAttribute("OnClick", "window.close()");
+boton.setAttribute("value","cerrar");
+
+
+ ventana.document.write("<img src='imagenes/1.jpg'/> <br>");
+
+
+ventana.document.body.appendChild(boton);
+
+}
+
+
+function imagen2(){
+	
+	 
+	var ventana2= window.open("", "", opciones);
+
+
+ventana2.document.write("<html>"
+                                          +"<head>"+
+                                          "</head>"+
+                                          "<body>"+"<h1>Ventana en la esquina superior derecha: </h1>"
+                                          +"<input name=\"btn_abrirVentana\" type=\"button\" onClick=\"window.close()\" value=\"Cerrar\"/></html>");
+
+	
+	
+}
+
+
+
+function imagen3(){
+
+var ventana= window.open("", "popup", "height=300", "width=300", "scrollbars= yes", "");
+
+
+var boton = document.createElement("input");
+boton.setAttribute("type", "button");
+boton.setAttribute("OnClick", "window.close()");
+boton.setAttribute("value","cerrar");
+
+
+ ventana.document.write("<img src='imagenes/3.jpg'/> <br>");
+
+
+ventana.document.body.appendChild(boton);	
+	
+}
+
+
+
+function imagen4(){
+
+var ventana= window.open("", "popup", "height=300", "width=300", "scrollbars= yes", "");
+
+
+var boton = document.createElement("input");
+boton.setAttribute("type", "button");
+boton.setAttribute("OnClick", "window.close()");
+boton.setAttribute("value","cerrar");
+
+
+ ventana.document.write("<img src='imagenes/4.jpg'/> <br>");
+
+
+ventana.document.body.appendChild(boton);	
+	
+}
+
+</script>
+</head>
+
+<body>
+
+<h2>Página con minuaturas de imagenes</h2>
+
+<table>
+
+<tr>
+
+<td><img src="imagenes/1.jpg" width="100" height="100" alt="" id="uno" onClick="imagen1();"/></td>
+<td><img src="imagenes/2.jpg" width="100" height="100" alt="" id="dos" onClick="imagen2();"/></td>
+<td><img src="imagenes/3.jpg" width="100" height="100" alt="" id="tres" onClick="imagen3();"/></td>
+<td><img src="imagenes/4.jpg" width="100" height="100" alt="" id="cuatro" onClick="imagen4();"/></td>
+
+</tr>
+
+</table>
+
+
+</body>
+</html>

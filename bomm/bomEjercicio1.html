@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<head><title>EJERCICIO 1</title></head>
+<style>
+    .title{
+        text-align: center;
+      width: 
+    }
+ </style>
+<script>
+function crearVentanas(){
+		for(x=0; x<5; x++){
+                var opciones = "left="220+", top="+220+", width=200, height=200";
+                mi_ventana = window.open("","",opciones);
+                mi_ventana.document.write("<html>"
+                                          +"<head>"+
+                                          "</head>"+
+                                          "<body>"+"<h1>Ventana: "
+                                          +(x+1)+"</h1>"
+                                          +"<input name=\"btn_abrirVentana\" type=\"button\" onClick=\"window.close()\" value=\"Cerrar\"/></html>");
+        
+        
+    }
+    
+}
+</script>
+    <h1 class="title">Apertura de múltiples ventanas(5)</h1>
+<center>
+    <input name="boton" type="button" onclick="crearVentanas();" value="abre ventanas">
+</center>
+</body>
+</html>

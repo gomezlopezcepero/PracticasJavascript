@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+<script language="javascript">
+
+
+limite=100;
+contenido_textarea= "";
+
+function escribir(){
+
+var longitud = document.getElementById("textarea").value.length;
+
+		
+		
+	if(longitud > 100){
+		document.getElementById("textarea").value = contenido_textarea;
+	alert("solo puedes escribir 100 carácteres");	
+	}
+	else{
+		contenido_textarea = document.getElementById("textarea").value;
+		longitud = limite - longitud;
+		
+		document.getElementById("cien").innerHTML=longitud;
+		
+	}
+		
+}
+
+
+
+
+
+window.onload = function() {
+	document.getElementById("textarea").onkeyup = escribir;
+
+}
+
+</script>
+<meta charset="utf-8">
+<title>Documento sin título</title>
+</head>
+
+<body>
+
+<p> puedes escribir hasta <span id="cien">100</span> carácteres adicionales</p>
+
+<textarea  id="textarea"></textarea>
+</body>
+</html>

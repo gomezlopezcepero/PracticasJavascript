@@ -1,0 +1,164 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sin título</title>
+
+<style>
+
+* {
+				margin:0px;
+				padding:0px;
+			}
+			
+			#header {
+				margin:auto;
+				width: 1000px;
+				font-family:Arial, Helvetica, sans-serif;
+			}
+			
+			ul, ol {
+				list-style:none;
+			}
+			
+			.nav > li {
+				float:left;
+			}
+			
+			.nav li a {
+				background-color:#000;
+				color:#fff;
+				text-decoration:none;
+				padding:10px 12px;
+				display:block;
+			}
+			
+
+			
+			.nav li ul {
+				display:none;
+				position:absolute;
+				min-width:140px;
+			}
+
+
+			
+
+
+.nav li a:not(:last-child) .flecha {
+display: inline;
+}			
+
+</style>
+
+<meta charset="utf-8">
+<title>Documento sin título</title>
+
+<script language="javascript">
+
+
+function muestraMensaje1(){
+	
+		document.getElementById("mostrareso").setAttribute("style", "display: block");
+		document.getElementById("eso").setAttribute("style", "background-color:green");
+
+}
+
+function ocultaMensaje1(){
+	
+		document.getElementById("mostrareso").setAttribute("style", "display: none");
+		document.getElementById("eso").setAttribute("style", "background-color:black");
+
+}
+
+
+
+
+function muestraMensaje2(){
+	
+		document.getElementById("mostrarmedio").setAttribute("style", "display: block");
+		document.getElementById("medio").setAttribute("style", "background-color:green");
+
+}
+
+function ocultaMensaje2(){
+	
+		document.getElementById("mostrarmedio").setAttribute("style", "display: none");
+		document.getElementById("medio").setAttribute("style", "background-color:black");
+
+}
+
+
+
+function muestraMensaje3(){
+	
+		document.getElementById("mostrarsuperior").setAttribute("style", "display: block");
+		document.getElementById("superior").setAttribute("style", "background-color:green");
+
+}
+
+function ocultaMensaje3(){
+	
+		document.getElementById("mostrarsuperior").setAttribute("style", "display: none");
+		document.getElementById("superior").setAttribute("style", "background-color:black");
+
+}
+
+window.onload = function() {
+	document.getElementById("eso").onmouseover = muestraMensaje1;
+	document.getElementById("eso").onmouseout = ocultaMensaje1;
+	
+	
+	document.getElementById("medio").onmouseover = muestraMensaje2;
+	document.getElementById("medio").onmouseout = ocultaMensaje2;
+	
+	
+	document.getElementById("superior").onmouseover = muestraMensaje3;
+	document.getElementById("superior").onmouseout = ocultaMensaje3;
+
+	
+}
+</script>
+</head>
+
+<body>
+
+
+<img src="1.jpg"/>
+<div id="header">
+
+
+			<ul class="nav">
+				<div id="eso">
+				<li><a href="">Enseñanza secundaria obligatoria</a>
+					<ul id="mostrareso">
+						<li ><a href="">1º Eso</a></li>
+						<li><a href="">2º ESO</a></li>
+						<li><a href="">3º ESO</a>                        </li>
+                        <li><a href="">4º ESO</a></li>
+
+					</ul>
+				</li>
+                </div>
+                <div id="medio">
+				<li><a  href="">Ciclos formativo grado medio</a>
+					<ul  id="mostrarmedio">
+						<li><a href="">Cocina</a></li>
+						<li><a href="">Enfermeria</a></li>
+
+					</ul>
+				</li>
+                </div>
+				
+ <li><a  id="superior" href="">Ciclos formativo grado superior</a>
+					<ul  id="mostrarsuperior">
+						<li><a href="">WEB</a></li>
+						<li><a href="">Diagnostico</a></li>
+
+					</ul>
+				</li>
+                    
+			</ul>
+		</div>
+</body>
+</html>

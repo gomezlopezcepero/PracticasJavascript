@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<head><title>EJERCICIO 2</title></head>
+<style>
+    .title{
+        text-align: center;
+      width: 
+    }
+ </style>
+<script>
+function crearVentanas(){
+                var opciones = "left="+950+", top="+15+", width=200, height=200";
+                mi_ventana = window.open("","",opciones);
+                mi_ventana.document.write("<html>"
+                                          +"<head>"+
+                                          "</head>"+
+                                          "<body>"+"<h1>Ventana en la esquina superior derecha: </h1>"
+                                          +"<input name=\"btn_abrirVentana\" type=\"button\" onClick=\"window.close()\" value=\"Cerrar\"/></html>");
+}
+</script>
+<head>
+    <meta charset="UTF-8">
+    <title>EJERCICIO !</title>
+</head>
+<body>
+    <h1 class="title">Apertura de múltiples ventanas(5)</h1>
+<center>
+    <input name="boton" type="button" onclick="crearVentanas();" value="abre ventana">
+</center>
+</body>
+</html>

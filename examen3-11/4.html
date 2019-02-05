@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sin título</title>
+
+<script language="javascript">
+
+function agrandar(){
+
+document.getElementById("parra").setAttribute("style","font-size: 20px");	
+	
+}
+
+
+window.onload = function() {
+	document.getElementById("boton").onfocus = agrandar;
+
+}
+
+</script>
+</head>
+
+<body>
+
+<p>Fuente</p>
+
+<select>
+<option>Times</option>
+<option>Arial</option>
+<option>Tahoma</option>
+<option>css</option>
+
+
+</select>
+
+<p>Estilo</p>
+<select>
+<option>Normal</option>
+<option>Cursiva</option>
+<option>fr</option>
+<option>css</option>
+
+
+</select>
+
+
+<p>Color</p>
+<select>
+<option>Negro</option>
+<option>Rojo</option>
+<option>verde</option>
+<option>azul</option>
+
+
+</select>
+
+<p>Tamaño</p>
+<select>
+<option>10</option>
+<option>15</option>
+<option>20</option>
+<option>25</option>
+
+
+</select>
+
+</body>
+</html>
+
+
+
+<br>
+
+<br>
+
+<br>
+
+<h2>Esto es un texto que se va a modificuar segun la opcion elegida</h2>

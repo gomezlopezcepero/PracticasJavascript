@@ -1,0 +1,173 @@
+<!doctype html>
+<html>
+<head>
+
+<script language="javascript">
+var tabla   = document.createElement("table");
+ var hilera = document.createElement("tr");
+ var cont=0;
+function iniciar(){
+	
+	    document.pepe.btnEliminar.disabled=true;
+		document.pepe.btnLeer.disabled=true;
+		document.pepe.btnAument.disabled=true;
+		document.pepe.btnReduc.disabled=true;
+
+genera_tabla();
+
+}
+
+var contBord=1;
+function aumentar_borde(){
+	
+	if(contBord<20){
+contBord++;
+ var tabla = document.getElementsByTagName("table")[0];
+	tabla.setAttribute("border", contBord);
+
+document.body.appendChild(tabla);
+	}
+	else{
+		
+		alert("El borde no puede ser más de 20");
+	}
+}
+
+function leer_borde(){
+	
+	alert("El borde es de "+contBord);
+}
+
+
+function reducir_borde(){
+	
+	if(contBord>1){
+	contBord--;
+ var tabla = document.getElementsByTagName("table")[0];
+	tabla.setAttribute("border", contBord);
+	}
+	else{
+		document.pepe.btnReduc.disabled=false;
+	}
+}
+
+
+
+
+function eliminar_tabla(){
+
+if(cont>1){
+	document.pepe.btnEliminar.disabled=false;
+	document.pepe.btnAgregar.disabled=false;
+	document.getElementsByTagName("table")[0].deleteRow(0);
+
+cont--;	
+}else{
+	document.pepe.btnEliminar.disabled=true;
+}
+}
+		
+function genera_tabla() {
+  // Obtener la referencia del elemento body
+  document.pepe.btnEliminar.disabled=false;
+  cont++;
+  var body = document.getElementsByTagName("body")[0];
+ 
+  // Crea un elemento <table> y un elemento <tbody>
+  
+  var tblBody = document.createElement("tbody");
+ 
+  // Crea las celdas
+  
+    // Crea las hileras de la tabla
+    var hilera = document.createElement("tr");
+	
+	if(cont<=5){
+ 
+    for (var j = 1; j < 4; j++) {
+      // Crea un elemento <td> y un nodo de texto, haz que el nodo de
+      // texto sea el contenido de <td>, ubica el elemento <td> al final
+      // de la hilera de la tabla
+      var celda = document.createElement("td");
+      var textoCelda = document.createTextNode("fila "+cont+", columna "+j);
+      celda.appendChild(textoCelda);
+      hilera.appendChild(celda);
+    }
+	}
+	else{
+	
+	 document.pepe.btnAgregar.disabled=true;
+	
+	
+	
+	
+	}
+ 
+    // agrega la hilera al final de la tabla (al final del elemento tblbody)
+    tblBody.appendChild(hilera);
+  
+ 
+  // posiciona el <tbody> debajo del elemento <table>
+  tabla.appendChild(tblBody);
+  // appends <table> into <body>
+  
+  
+  
+  body.appendChild(tabla);
+  // modifica el atributo "border" de la tabla y lo fija a "2";
+  
+}
+	
+
+tabla.setAttribute("border", 2);
+
+
+
+</script>
+<style>
+table{
+	position:absolute;
+	left: 50px;
+	top: 70px;
+}
+h1{
+	position: absolute;
+	left: 50px;
+}
+
+</style>
+
+
+<meta charset="utf-8">
+<title>Documento sin título</title>
+</head>
+
+<body onLoad="iniciar();">
+
+
+<h1>Operaciones con la tabla</h1>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<form name="pepe">
+<button  onClick="genera_tabla();" type="submit" name="btnAgregar">Agregar fila</button>
+<button type="button" onClick="eliminar_tabla();"  name="btnEliminar">Eliminar fila</button>
+<button type="button" onClick="leer_borde();"  name="btnLeer;">Leer borde</button>
+<button type="button" onClick="aumentar_borde();" name="btnAument">Aumentar borde</button>
+<button type="button" onClick="reducir_borde();" name="btnReduc">Reducir borde</button>
+</form>
+</body>
+</html>

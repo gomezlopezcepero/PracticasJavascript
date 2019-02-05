@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<script language="javascript">
+
+function resalta(elEvento){
+	
+	var evento = elEvento || window.event;
+	
+	switch(evento.type){
+	case 'mouseover':
+		this.style.borderColor = 'black';
+		break;
+	case 'mouseout':
+		this.style.borderColor = 'silver';
+		break;
+	}
+}
+
+window.onload = function() {
+  document.getElementById("seccion").onmouseover = resalta;
+  document.getElementById("seccion").onmouseout = resalta;
+}
+
+
+</script>
+<meta charset="utf-8">
+<title>Documento sin título</title>
+</head>
+
+<body>
+
+<div id="seccion" style="width:150px; height:60px; border:thin solid silver">
+  Sección de contenidos...
+</div>
+
+</body>
+</html>

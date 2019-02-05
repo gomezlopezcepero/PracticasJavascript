@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+
+<script language="javascript">
+
+function enviar(){
+	
+var texto = document.getElementById("texto").value;
+	
+	var str = " va a enviar la página a http://www.cdjosecabrera.es";
+	var texto = texto.concat(str);
+	
+
+	alert(texto);
+	
+	
+	window.open("http://www.cdjosecabrera.es","");
+	
+}
+
+</script>
+<meta charset="utf-8">
+<title>Documento sin título</title>
+</head>
+
+<body>
+
+<input type="text" value="" id="texto"> 
+<input type="submit" value="enviar" onClick="enviar();">
+
+
+
+</body>
+</html>
